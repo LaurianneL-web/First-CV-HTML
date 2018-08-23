@@ -1,0 +1,267 @@
+/* Initialisation de la page web */
+html {
+	height: 100%;
+	font-size: 100%;
+	overflow-y: scroll;
+
+	/* On empêche les navigateurs de réajuster automatiquement les textes (le zoom du navigateur reste utilisable pour l'utilisateur) */
+	-webkit-text-size-adjust: 100%;
+}
+
+
+/* Corps de la page web */
+body {
+	margin: 0;
+	min-height: 100%;
+
+	/* On améliore le rendu des textes, la gestion des paires de crénage (espacement entre les lettres) et des ligatures (caractères qui fusionnent) */
+	-webkit-font-smoothing:antialiased; font-smoothing:antialiased; text-rendering:optimizeLegibility; 
+
+	color: #2c373e;
+	background-color: #c4d6e3;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+footer{
+	margin:0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+/* Importation des polices manquantes */
+@font-face {
+    font-family: BebasNeue;
+    font-weight: bold;
+    src: url("sources/Fonts/BebasNeue_Bold.eot") format("embedded-opentype"),
+    	 url("sources/Fonts/BebasNeue_Bold.woff") format("woff"),
+    	 url("sources/Fonts/BebasNeue_Bold.woff2") format("woff2"),
+    	 url("sources/Fonts/BebasNeue_Bold.otf") format("opentype"),
+    	 url("sources/Fonts/BebasNeue_Bold.ttf") format("truetype"),
+    	 url("sources/Fonts/BebasNeue_Bold.svg") format("svg");
+}
+@font-face {
+    font-family: BebasNeue;
+    font-weight: normal;
+    src: url("sources/Fonts/BebasNeue_Regular.eot") format("embedded-opentype"),
+    	 url("sources/Fonts/BebasNeue_Regular.woff") format("woff"),
+    	 url("sources/Fonts/BebasNeue_Regular.woff2") format("woff2"),
+    	 url("sources/Fonts/BebasNeue_Regular.otf") format("opentype"),
+    	 url("sources/Fonts/BebasNeue_Regular.ttf") format("truetype"),
+    	 url("sources/Fonts/BebasNeue_Bold.svg") format("svg");
+}
+
+
+
+/* Initialisation des couleurs --> Comprendre le fonctionnement de LESS*/ 
+/*@PoliceColor: #2c373e;
+@FondColor: #c4d6e3;
+@BlueColor: #34bfbc;
+@DarkBlueColor: #3d5772;
+@GreyColor: #7f8085;*/
+
+
+/* Mis en forme de la navigation */
+#nav {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+	font-size: 1.2em;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.4em;
+    text-decoration: none;
+	position: relative;
+}
+li a:hover:not(.active) {
+    background-color: #34bfbc;
+}
+.active {
+    background-color: #34bfbc;
+}
+/* Flêche pour remonter à l'index de la page web */
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+/* Mis en forme de h1, h2, h3, h4, h5 */
+h1, h2, h3, h4, h5{margin: 0; padding: 0.4em;}
+
+h1, h2, h3 {
+	font-size: 4.75em;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: center;
+	padding-bottom: 0.2em;
+	font-family: "Bebas Neue", "Oswald", sans-serif;
+}
+
+h1,h2{font-weight: bold, 700;}
+h1{color: #34bfbc;}
+h2 {font-size: 2.5em; line-height: 0.8em; padding-bottom: 0.2em;}
+h3 {font-weight: normal; font-size: 2.4em; text-align: left; color: #34bfbc;} 
+
+h4, h5 {
+	font-size: 1.5em;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	margin: 0.4em 0 0.4em 0;
+}
+h4{font-size:1.2em;}
+h5{font-size:1em; color: #2c373e;}
+
+p{
+	margin: 0;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+.pComp{
+	/*text-indent: 3em;*/
+	padding: 0.4em;
+}
+
+a:link{
+	color: #2c373e;
+	text-decoration: none; 
+}
+a:hover {
+    color: #34bfbc;
+}
+/* Classes */
+.Poste-Nom{
+	background-color: #f3f3f3; 
+}
+
+.Dispo{
+	text-transform: uppercase;
+	text-align: right;
+	font-weight: 500;
+	padding: 0.4em;
+}
+
+.container{
+	background: white;
+	width: 96%;
+	height: 100%;
+	margin: 1em auto 1.6em auto;
+	padding: 1.6em 0 1.6em 0;
+}
+.divCoin{
+	background-color: white;
+	border:0.01em solid #9FC6FF;
+	padding:1em;
+	margin:1.4em 5em 1.4em 5em;
+	/* Arrondir les coins */
+	-moz-border-radius:10px 10px;
+	-webkit-border-radius:10px 10px;
+	border-radius:10px 10px;
+	/* Effet ombre */
+	box-shadow: 0px 0px 40px #d1d1d1;
+}
+
+.date{
+	font-weight: 300;
+	font-size: 1.2em;
+	color: #3d5772;
+}
+.diplome{
+	font-weight: 500;
+	font-size: 1.2em;
+	padding: 0.2em 0em 0em 0.5em;
+}
+.lieu{
+	font-weight: 300;
+	font-size: 0.8em;
+	color: #3d5772;
+}
+.description{
+	font-weight: 300;
+	font-size: 0.8em;
+}
+.societe{
+	font-weight: 400;
+	font-size: 1em;
+	display: inline-block;
+	color: #7f8085;
+}
+.poste{
+	font-weight: 900;
+	font-size: 1.6em;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.periode{
+	text-align: right;
+}
+
+	/* Barre des compétences */
+.Comp{
+	display: block;
+	margin: 0.2em 0em 0.2em 0em;
+	padding: 0;
+	height: 1.4em;
+	position: relative;
+	border-radius: 4px;
+	margin-bottom: 0.8em;
+	background-color: #3d5772;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.CompCompleted{
+	width: 100%;
+	background-color: #7f8085;
+}
+.CompText{
+	padding: 0.2em 0em 0.2em 1em;
+	color: white;
+	font-weight: normal;
+	font-size: 0.8em;
+}
+.row:after{
+	content: "";
+    display: inline-flex;
+    width: 100%;
+    clear: both;
+}
+
+.column{
+	float: left;
+	width: 50%;
+	text-align: left;
+}
+
+figure{
+	width: 4em;
+	text-align: center;
+}
+
+.grpComp{
+	width: 80%;
+	margin: 0 auto 1.6em auto;
+}
+
+.divFlex{
+	display: inline-flex;
+    width: 100%;
+}
